@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: savysko-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: savysko-app
+  template:
+    metadata:
+      labels:
+        app: savysko-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
