@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: savysko-service
+spec:
+  selector:
+    app: savysko-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
